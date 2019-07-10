@@ -1,4 +1,4 @@
-# btc_faucet
+# BTC Faucet
 
 A new Flutter project.
 
