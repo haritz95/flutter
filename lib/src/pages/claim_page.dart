@@ -13,6 +13,8 @@ class _ClaimPageState extends State<ClaimPage> {
   bool _buttonDisable = false;
   String _buttonText = "Claim";
 
+  double _balance = 0.00000000;
+
   int _duelCommandment = 50;
 
   @override
@@ -30,9 +32,9 @@ class _ClaimPageState extends State<ClaimPage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      const ListTile(
+                       ListTile(
                         title: Text('My Balance'),
-                        subtitle: Text('0.00000000 BTC'),
+                        subtitle: Text(_balance.toString() + ' BTC'),
                         trailing: Icon(Icons.donut_large),
                       ),
                     ],
@@ -100,8 +102,9 @@ class _ClaimPageState extends State<ClaimPage> {
   }  
 
   _claim(){
-    CountDown cd = CountDown(Duration(seconds : 100));
+    CountDown cd = CountDown(Duration(seconds : 1));
     var sub = cd.stream.listen(null);
+    _balance = _balance + 0.00000100;
 
     if(_duelCommandment <= 1){
       //_duelCommandment--;

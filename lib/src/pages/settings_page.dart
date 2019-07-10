@@ -9,6 +9,7 @@ class Settings extends StatelessWidget {
        child: ListView(
          children: <Widget>[
             Card(
+              elevation: 15,
               child: ListTile(
                 leading: Icon(Icons.question_answer),
                 title: Text('FAQ'),
@@ -17,6 +18,7 @@ class Settings extends StatelessWidget {
               ),
             ),
             Card(
+              elevation: 15,
               child: ListTile(
                 leading: Icon(Icons.gavel),
                 title: Text('Privacy Policy'),
@@ -25,6 +27,7 @@ class Settings extends StatelessWidget {
               ),
             ),
             Card(
+              elevation: 15,
               child: ListTile(
                 leading: Icon(Icons.email),
                 title: Text('Email Us'),
@@ -34,6 +37,7 @@ class Settings extends StatelessWidget {
             ),
             Divider(),
             Card(
+              elevation: 15,
               child: ListTile(
                 leading: Icon(Icons.exit_to_app),
                 title: Text('Logout'),
