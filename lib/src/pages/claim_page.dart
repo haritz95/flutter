@@ -17,65 +17,69 @@ class _ClaimPageState extends State<ClaimPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 65.0),
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-               child: Card(
-                 elevation: 15,
-                 margin: EdgeInsets.only(bottom: 25),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    const ListTile(
-                      title: Text('My Balance'),
-                      subtitle: Text('0.00000000 BTC'),
-                      trailing: Icon(Icons.donut_large),
-                    ),
-                  ],
-                ),
-              ),
-             ),
-            Row(
+    return ListView(
+      children: <Widget>[
+       Container(
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 25.0),
+          child: Column(
             children: <Widget>[
-              Expanded(
-                child: Column( 
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Text('Claim Energy', style: TextStyle(color: Colors.pink[300], fontSize: 25.0)),
-                        SizedBox( height: 7.0),
-                        Row(
-                          children: <Widget>[
-                            Text('$_duelCommandment', style: TextStyle( fontSize: 20.0, color: Colors.pink[300] ) ),
-                            Icon( Icons.flash_on, color: Colors.pink[300], size: 30.0 ),                         
-                          ],
-                        )
-                      ],
-                    ),
-                    SizedBox(
-                      height: 50.00,
-                      child: Slider(
-                        activeColor: Colors.pinkAccent,
-                        value: _duelCommandment.toDouble(),
-                        inactiveColor: Colors.pinkAccent,
-                        min: 0,
-                        max: 50,
-                        label: '$_duelCommandment',
-                          onChanged: null,
+              SizedBox(
+                 child: Card(
+                   elevation: 15,
+                   margin: EdgeInsets.only(bottom: 25),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      const ListTile(
+                        title: Text('My Balance'),
+                        subtitle: Text('0.00000000 BTC'),
+                        trailing: Icon(Icons.donut_large),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
-          ),
-          _boton()
-        ],
+               ),
+              Row(
+              children: <Widget>[
+                Expanded(
+                  child: Column( 
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text('Claim Energy', style: TextStyle(color: Colors.pink[300], fontSize: 25.0)),
+                          SizedBox( height: 7.0),
+                          Row(
+                            children: <Widget>[
+                              Text('$_duelCommandment', style: TextStyle( fontSize: 20.0, color: Colors.pink[300] ) ),
+                              Icon( Icons.flash_on, color: Colors.pink[300], size: 30.0 ),                         
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 50.00,
+                        child: Slider(
+                          activeColor: Colors.pinkAccent,
+                          value: _duelCommandment.toDouble(),
+                          inactiveColor: Colors.pinkAccent,
+                          min: 0,
+                          max: 50,
+                          label: '$_duelCommandment',
+                            onChanged: null,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            _boton()
+          ],
+        ),
       ),
+      ],
     );
   }
 
